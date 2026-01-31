@@ -10,7 +10,7 @@ const PatientDashboard = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const res = await axios.get('https://onlineprescription.onrender.com/api/doctors');
+        const res = await axios.get('http://localhost:5000/api/doctors');
         setDoctors(res.data);
       } catch (err) {
         console.error(err);
@@ -30,7 +30,7 @@ const PatientDashboard = () => {
               <CardMedia
                 component="img"
                 height="140"
-                image={doctor.profilePicture ? `https://onlineprescription.onrender.com/uploads/${doctor.profilePicture}` : '/default-avatar.png'}
+                image={doctor.profilePicture ? `http://localhost:5000/uploads/${doctor.profilePicture}` : '/default-avatar.png'}
                 alt={doctor.name}
               />
               <CardContent>

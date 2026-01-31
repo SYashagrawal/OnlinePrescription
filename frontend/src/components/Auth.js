@@ -34,7 +34,7 @@ const Auth = ({ role }) => {
     }
 
     try {
-      const res = await axios.post(`https://onlineprescription.onrender.com/api/auth/${isSignUp ? 'signup' : 'signin'}`, data);
+      const res = await axios.post(`http://localhost:5000/api/auth/${isSignUp ? 'signup' : 'signin'}`, data);
       localStorage.setItem('token', res.data.token);
       localStorage.setItem('user', JSON.stringify(res.data.user));
       navigate(role === 'doctor' ? '/doctor/profile' : '/patient/dashboard');

@@ -11,7 +11,7 @@ const PrescriptionPage = () => {
     const fetchConsultations = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('https://onlineprescription.onrender.com/api/doctors/consultations', { headers: { Authorization: `Bearer ${token}` } });
+        const res = await axios.get('http://localhost:5000/api/doctors/consultations', { headers: { Authorization: `Bearer ${token}` } });
         setConsultations(res.data);
       } catch (err) {
         console.error(err);

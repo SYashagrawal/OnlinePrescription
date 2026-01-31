@@ -36,7 +36,7 @@ const ConsultationForm = () => {
       // Submit
       try {
         const token = localStorage.getItem('token');
-        await axios.post('https://onlineprescription.onrender.com/api/consultations', {
+        await axios.post('http://localhost:5000/api/consultations', {
           doctorId,
           currentIllness: formData.currentIllness,
           recentSurgery: formData.recentSurgery,
