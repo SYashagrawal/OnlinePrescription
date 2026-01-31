@@ -33,7 +33,7 @@ const PrescriptionForm = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.post('http://localhost:5000/api/prescriptions', {
+      const res = await axios.post('https://onlineprescription.onrender.com/api/prescriptions', {
         consultationId,
         ...formData
       }, { headers: { Authorization: `Bearer ${token}` } });
@@ -64,7 +64,7 @@ const PrescriptionForm = () => {
       </form>
       {prescription && (
         <Box sx={{ mt: 2 }}>
-          <Typography>PDF: <a href={`http://localhost:5000/${prescription.pdfPath}`} target="_blank">Download</a></Typography>
+          <Typography>PDF: <a href={`https://onlineprescription.onrender.com/${prescription.pdfPath}`} target="_blank">Download</a></Typography>
           <Button variant="outlined" onClick={handleSend}>Send to Patient</Button>
         </Box>
       )}

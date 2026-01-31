@@ -9,7 +9,7 @@ const PatientPrescriptions = () => {
     const fetchPrescriptions = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await axios.get('http://localhost:5000/api/patients/prescriptions', { headers: { Authorization: `Bearer ${token}` } });
+        const res = await axios.get('https://onlineprescription.onrender.com/api/patients/prescriptions', { headers: { Authorization: `Bearer ${token}` } });
         setPrescriptions(res.data);
       } catch (err) {
         console.error(err);
@@ -29,7 +29,7 @@ const PatientPrescriptions = () => {
               secondary={`Medicines: ${prescription.medicines} | Care: ${prescription.careToBeTaken}`}
             />
             {prescription.pdfPath && (
-              <a href={`http://localhost:5000/${prescription.pdfPath}`} target="_blank">Download PDF</a>
+              <a href={`https://onlineprescription.onrender.com/${prescription.pdfPath}`} target="_blank">Download PDF</a>
             )}
           </ListItem>
         ))}
